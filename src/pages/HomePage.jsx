@@ -9,17 +9,21 @@ export default function HomePage() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div>
 
-            <img src="/images/heading.png">
-            </img>
+            <div class="logo-homepage">
+              <img 
+                src="/images/heading.png">
+              </img>
+            </div>
 
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            ¡Tu espacio está en las mejores manos!
-            </h2>
+            <div className="homepage-text">
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              ¡Tu espacio está en las mejores manos!
+              </h2>
 
-            <p className="mt-3 max-w-3xl text-lg text-gray-500">
-              Nos encargamos de acondicionar tu espacio de acuerdo a tus necesidades, para que tú, tu familia y tus clientes disfruten del mejor lugar.
-            </p>
-
+              <p className="mt-3 max-w-3xl text-lg text-gray-500">
+                Nos encargamos de acondicionar tu espacio de acuerdo a tus necesidades, para que tú, tu familia y tus clientes disfruten del mejor lugar.
+              </p>
+            </div>
 
           </div>
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">

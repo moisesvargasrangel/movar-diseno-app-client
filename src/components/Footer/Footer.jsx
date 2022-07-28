@@ -43,7 +43,7 @@ const navigation = {
     },
     {
       name: 'GitHub',
-      href: 'https://github.com/vargasrangel',
+      href: 'https://github.com/moisesvargasrangel',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

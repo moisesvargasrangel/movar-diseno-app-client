@@ -1,7 +1,7 @@
-.App {
+ .homepage-text {
   text-align: center;
 }
-
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +35,10 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.logo-homepage{
+  width: 350px;
+  padding-left: 200px;
 }

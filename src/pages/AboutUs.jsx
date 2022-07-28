@@ -63,7 +63,7 @@ export default function AboutUs() {
           {supportLinks.map((link) => (
             <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
               <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-                <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                <div className="absolute top-0 p-3 inline-block bg-red-700 rounded-xl shadow-lg transform -translate-y-1/2">
                   <link.icon className="h-6 w-6 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-medium text-gray-900">{link.name}</h3>
