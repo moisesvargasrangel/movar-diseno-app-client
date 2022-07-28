@@ -18,6 +18,14 @@ import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import Questions from "./pages/QyA";
 
+//Pages USER
+import ShoppingCart from "./pages/User/ShoppingCart"; 
+import MyProducts from "./pages/User/MyProducts";
+import ProductStatus from "./pages/User/ProductStatus";
+
+//Pages ADMIN
+import OrderStatus from "./pages/Admin/OrderStatus";
+
 
 
 export default function App() {
@@ -79,6 +87,12 @@ export default function App() {
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/qya" element={<Questions/>}/>
+
+        <Route path="/shoppingcart" element={<ShoppingCart/>}/>
+        <Route path="/myproducts" element={<MyProducts/>}/>
+        <Route path="/productstatus" element={<ProductStatus/>}/>
+
+        <Route path="/statusorder" element={<OrderStatus/>}/>
         
       </Routes>
 
