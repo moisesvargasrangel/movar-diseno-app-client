@@ -1,9 +1,15 @@
 import { Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import Login from "../pages/LogIn";
-import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import * as PATHS from "../utils/paths";
+
+//PAGES
+import Login from "../pages/LogIn";
+import Signup from "../pages/Signup";
+import HomePage from "../pages/HomePage";
+import AboutUs from "../pages/AboutUs";
+import Gallery from "../pages/Gallery";
+import QyA from "../pages/QyA";
+
 
 const routes = (props) => {
   const { user } = props;

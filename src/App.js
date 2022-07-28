@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import LoadingComponent from "./components/Loading";
-import Navbar from "./components/Navbar/Navbar";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
+import { Fragment } from 'react'
+
+//Components
+import LoadingComponent from "./components/Loading";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 //Pages
 import HomePage from "./pages/HomePage";
 import LogIn from "./pages/LogIn";
 import Signup from "./pages/Signup";
+import AboutUs from "./pages/AboutUs";
+import Gallery from "./pages/Gallery";
+import Questions from "./pages/QyA";
+
+
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -57,16 +66,23 @@ export default function App() {
   return (
     <div className="App">
       <Navbar handleLogout={handleLogout} user={user} />
-      <Routes>
+     
+        
+        <Routes>
         {/* {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))} */}
 
-
         <Route path="/" element={<HomePage/>} />
         <Route path="/auth/login" element={<LogIn/>} />
         <Route path="/auth/signup" element={<Signup/>} />
+        <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/qya" element={<Questions/>}/>
+        
       </Routes>
+
+      <Footer/>  
     </div>
   );
 }
