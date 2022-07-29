@@ -28,11 +28,15 @@ export default function AboutUs() {
 
             <div className="homepage-text">
               <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              ¡Tu espacio está en las mejores manos!
+              Nuestra historia
               </h2>
 
               <p className="mt-3 max-w-3xl text-lg text-gray-500">
-                Nos encargamos de acondicionar tu espacio de acuerdo a tus necesidades, para que tú, tu familia y tus clientes disfruten del mejor lugar.
+              Desde hace 30 años, nos hemos dedicado a cumplir con 
+            las necesidades de las familias respecto al
+            diseño de su hogar. No basta con cumplir 
+            el aspecto visual, la <b>funcionalidad</b> y  
+            <b> calidad</b> de los muebles es nuestra prioridad.
               </p>
             </div>
 
