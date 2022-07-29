@@ -1,11 +1,12 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { BellIcon, ShoppingCartIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const navigation = [
+  { name: 'Inicio', href: '/', current: false },
   { name: 'Catálogo', href: '/gallery', current: false },
   { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
   { name: 'Ingresa', href: '/auth/login', current: false },
@@ -56,7 +57,7 @@ export default function Navbar() {
                   />
                   </Link>
                 </div>
-                <div className="hidden sm:block sm:ml-6">
+                <div className="hidden sm:block sm:m-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
@@ -75,14 +76,14 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <a href='/shoppingcart'>
                 <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
+                </a>
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
@@ -90,8 +91,8 @@ export default function Navbar() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        src="https://avatars.githubusercontent.com/u/106891043?v=4"
+                        alt="User Image"
                       />
                     </Menu.Button>
                   </div>
@@ -108,10 +109,20 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/myproducts"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
+                            Mis Pedidos
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="/shoppingcart"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Carrito
                           </a>
                         )}
                       </Menu.Item>
@@ -121,17 +132,7 @@ export default function Navbar() {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
+                            Cerrar Sesión
                           </a>
                         )}
                       </Menu.Item>
@@ -140,6 +141,9 @@ export default function Navbar() {
                 </Menu>
               </div>
             </div>
+
+
+            
           </div>
 
           <Disclosure.Panel className="sm:hidden">
@@ -162,6 +166,12 @@ export default function Navbar() {
           </Disclosure.Panel>
         </>
       )}
+
+
+
+
+
+      
     </Disclosure>
   )
 }
