@@ -87,13 +87,26 @@ export default function AboutUs() {
             <img className="h-12 w-auto" src="/images/logo-navbar.png" alt="" />
             <blockquote className="mt-6 text-white">
               <p className="text-xl font-medium sm:text-2xl">
-                Workflow has completely transformed how we interact with customers. We've seen record bookings, higher
-                customer satisfaction, and reduced churn.
+                Aprovechemos hasta el último rincón.
               </p>
               <footer className="mt-6">
                 <p className="flex flex-col font-medium">
-                  <span>Marie Chilvers</span>
-                  <span>CEO, Workcation</span>
+                  <span>
+                    <p> 
+                        Hoy en día, las familias necesitan aprovecha todo el espacio que
+                        tengan disponible. Es necesario adaptar los muebles de una forma funcional e inteligente,
+                        no es suficiente con que tenga una buena apariencia.
+                    </p>
+                    <br> 
+                  
+                    </br>
+                    <p className="text-xl font-medium sm:text-2xl">
+                    Funcionalidad, estilo, y eficiencia,
+                    </p>
+                    <p className="text-xl font-medium sm:text-2xl">
+                    materializemos lo que imaginas.
+                    </p>
+                  </span>
                 </p>
               </footer>
             </blockquote>

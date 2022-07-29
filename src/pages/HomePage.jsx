@@ -6,7 +6,7 @@ const supportLinks = [
     name: 'Negocio',
     href: '#',
     description:
-      'Sabemos lo importante que es tu negocio para ti, por eso nos comprometemos a darle el mejor servicio',
+      'Sabemos lo importante que es tu negocio para ti, por eso nos comprometemos a darle el mejor servicio.',
     icon: PresentationChartLineIcon,
   },
   {
@@ -20,7 +20,7 @@ const supportLinks = [
     name: 'Exposiciones y Stands',
     href: '#',
     description:
-      '¿Necesitas llevar tu negocio a otro nivel? Nos encantaría poder coolaborar contigo para dar ese gran salto',
+      '¿Necesitas llevar tu negocio a otro nivel? Nos encantaría poder coolaborar contigo para dar ese gran salto.',
     icon: OfficeBuildingIcon,
   },
   
