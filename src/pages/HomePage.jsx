@@ -114,9 +114,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-white">
+      <div className="bg-whitr">
       <div className="mx-auto py-0 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-0">
-        <div className="space-y-12">
+        <div className="space-y-8">
           <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Bienvenido a Movar Diseño</h2>
             <p className="text-xl text-gray-500">
@@ -137,7 +137,7 @@ export default function HomePage() {
                   <div className="space-y-2">
                     <div className="text-lg leading-6 font-medium space-y-1">
                       <h3>{person.name}</h3>
-                      <p className="text-indigo-600">{person.role}</p>
+                      <p className="text-red-700">{person.role}</p>
                     </div>
                     <ul role="list" className="flex space-x-5">
 

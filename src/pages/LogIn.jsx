@@ -66,7 +66,7 @@ export default function LogIn({authenticate}) {
 
             <div className="mt-8">
               <div className="mt-6">
-                <form onSubmit={handleFormSubmission} className="signup__form">
+                <form onSubmit={handleFormSubmission} className="space-y-6 signup__form">
                   <div>
                     <label htmlFor="input-username" className="block text-sm font-medium text-gray-700">
                       Correo Eléctronico
