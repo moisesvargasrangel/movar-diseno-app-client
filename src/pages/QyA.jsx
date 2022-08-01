@@ -1,11 +1,40 @@
 const faqs = [
   {
     id: 1,
-    question: "What's the best thing about Switzerland?",
+    question: "¿Mis productos tienen garantía?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "Claro que si. Todos nuestros productos tienen garantía por defecto de fábrica. El tiempo puede varíar dependiendo del producto."
   },
-  // More questions...
+  {
+    id: 2,
+    question: "¿Sólo tienen los productos exhibidos en su portal?",
+    answer:
+      "No, los productos mostrados en el portal, solo son algunos de los muchos que fabricamos para ustedes."
+  },
+  {
+    id: 3,
+    question: "¿Fabrican muebles sobre pedida?",
+    answer:
+      "Si, adaptamos la funcionalidad y el diseño de acuerdo a las necesidades que tenga usted y su hogar. "
+  },
+  {
+    id: 4,
+    question: "¿Como sé que mi compra es segura?",
+    answer:
+      "Movar Diseño ofrece la visita a las instalaciones, para que puedan observar el proceso, el taller y los productos. De esta manera usted podrá conocernos y tener la tranquilidad de que su inversión es segura. Además de que los productos sobre-pedido o sobre-medida, se liquidan hasta que se concluya la entrega del mismo."
+  },
+  {
+    id: 5,
+    question: "¿Aceptan tarjetas bancarias?",
+    answer:
+      "Si, a traves de nuestra terminal de BillPocket."
+  },
+  {
+    id: 6,
+    question: "¿Ofrecen MSI?",
+    answer:
+      "Si, es importante consultar la comisión que pueda tener su banco y el plazo requerido."
+  },
 ]
 
 export default function Questions() {

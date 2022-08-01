@@ -1,7 +1,6 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { NewspaperIcon, PhoneIcon, SupportIcon, HomeIcon, PresentationChartLineIcon, OfficeBuildingIcon} from '@heroicons/react/outline'
 
-const supportLinks = [
+const headingProducts = [
   {
     name: 'Negocio',
     href: '#',
@@ -26,10 +25,10 @@ const supportLinks = [
   
 ]
 
-const people = [
+const homeProducts = [
   {
     name: '2017 Expo Mueble Internacional - Stand Whirlpool',
-    role: 'Expo Guadalajara.',
+    role: 'Expo Guadalajara, GDL.',
     imageUrl:
       '/images/homepage/aa.jpeg',
   },
@@ -41,7 +40,7 @@ const people = [
   },
   {
     name: '2022 Expo Mueble Internacional - Stand Whirlpool',
-    role: 'Expo Guadalajara.',
+    role: 'Expo Guadalajara, GDL.',
     imageUrl:
       '/images/homepage/cc.png',
   },
@@ -99,7 +98,7 @@ export default function HomePage() {
       >
 
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
-          {supportLinks.map((link) => (
+          {headingProducts.map((link) => (
             <div key={link.name} className="flex flex-col bg-white rounded-2xl shadow-xl">
               <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
                 <div className="absolute top-0 p-3 inline-block bg-red-700 rounded-xl shadow-lg transform -translate-y-1/2">
@@ -120,14 +119,14 @@ export default function HomePage() {
           <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Bienvenido a Movar Diseño</h2>
             <p className="text-xl text-gray-500">
-              Dejanos mostrate un poco de nuestro trabajo...
+              Déjanos mostrate un poco de nuestro trabajo...
             </p>
           </div>
           <ul
             role="list"
             className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
           >
-            {people.map((person) => (
+            {homeProducts.map((person) => (
               <li key={person.name}>
                 <div className="space-y-4">
                   <div className="aspect-w-3 aspect-h-2">
