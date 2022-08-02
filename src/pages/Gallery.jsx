@@ -1,4 +1,8 @@
-/* This example requires Tailwind CSS v2.0+ */
+import { Link } from 'react-router-dom'
+import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid'
+import { PlusSmIcon as PlusSmIconOutline } from '@heroicons/react/outline'
+
+
 const products = [
   {
     id: 1,
@@ -10,7 +14,7 @@ const products = [
     price: '$20,000.00',
   },
   {
-    id: 1,
+    id: 2,
     name: 'Vestidor',
     color: 'Muebles en MDF color Rioja',
     href: '#',
@@ -19,7 +23,7 @@ const products = [
     price: '$14,000.00',
   },
   {
-    id: 1,
+    id: 3,
     name: 'Cocina Integral',
     color: 'Muebles en MDF, con cubierta de Piedra',
     href: '#',
@@ -28,7 +32,7 @@ const products = [
     price: '$18,000.00',
   },
   {
-    id: 1,
+    id: 4,
     name: 'Cocina Integral',
     color: 'Muebles en MDF, con cubierta de Piedra',
     href: '#',
@@ -80,6 +84,22 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+{/* 
+      <div>
+        <Link to= "/">
+          <button
+            type="button"
+            className="inline-flex items-center px-4 py-2 border 
+                      border-transparent text-sm font-medium rounded-md 
+                      text-indigo-700 bg-indigo-100 
+                      hover:bg-indigo-200 focus:outline-none 
+                      focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Nuevo Producto
+          </button>
+      </Link>
+      </div> */}
     </div>
+    
   )
 }

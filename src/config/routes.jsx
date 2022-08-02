@@ -18,6 +18,9 @@ import ShoppingCart from "../pages/User/ShoppingCart";
 import MyProducts from "../pages/User/MyProducts"
 import ProductStatus from "../pages/User/ProductStatus"
 
+//PRODUCTS ACTION
+import AddProduct from "../pages/ProductCrud/AddProductPage";
+
 
 const routes = (props) => {
   const { user } = props;

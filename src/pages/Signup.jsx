@@ -9,8 +9,11 @@ export default function Signup({authenticate}) {
   const [form, setForm] = useState({
     username: "",
     password: "",
+    country: "",
+    email: "",
+    fullName: ""
   });
-  const { username, password } = form;
+  const { username, password, country, email, fullName } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -24,7 +27,11 @@ export default function Signup({authenticate}) {
     const credentials = {
       username,
       password,
+      country,
+      email,
+      fullName
     };
+    console.log(credentials)
     signup(credentials).then((res) => {
       if (!res.status) {
         // unsuccessful signup
@@ -65,14 +72,14 @@ export default function Signup({authenticate}) {
 
               <div>
                 <label htmlFor="input-username" className="block text-sm font-medium text-gray-700">
-                  Correo Electrónico
+                  Nombre de Usuario
                 </label>
                 <div className="mt-1">
                   <input
                     id="input-username"
                     type="text"
                     name="username"
-                    placeholder="Correo Electrónico"
+                    placeholder="Nombre de Usuario"
                     value={username}
                     onChange={handleInputChange}
                     required
@@ -103,10 +110,64 @@ export default function Signup({authenticate}) {
                     <p>There was an error submiting the form:</p>
                     <p>{error.message}</p>
                   </div>
-                )}
-
-                  
+                )}                  
                 </div>
+              </div>
+
+
+              <div>
+                  <label htmlFor="input-fullName" className="block text-sm font-medium text-gray-700">
+                    Nombre
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="input-fullName"
+                      type="text"
+                      name="fullName"
+                      placeholder="Full Name"
+                      value={fullName}
+                      onChange={handleInputChange}
+                      // required
+                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                  </div>
+              </div>
+
+
+              <div>
+                  <label htmlFor="input-country" className="block text-sm font-medium text-gray-700">
+                    País
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="input-country"
+                      type="text"
+                      name="country"
+                      placeholder="País"
+                      value={country}
+                      onChange={handleInputChange}
+                      // required
+                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                  </div>
+              </div>
+
+              <div>
+                  <label htmlFor="input-email" className="block text-sm font-medium text-gray-700">
+                    Correo Electrónico
+                  </label>
+                  <div className="mt-1">
+                    <input
+                      id="input-email"
+                      type="text"
+                      name="email"
+                      placeholder="Correo Electrónico"
+                      value={email}
+                      onChange={handleInputChange}
+                      // required
+                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                  </div>
               </div>
 
               <div>

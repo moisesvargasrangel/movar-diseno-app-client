@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
@@ -26,11 +26,16 @@ import ProductStatus from "./pages/User/ProductStatus";
 //Pages ADMIN
 import OrderStatus from "./pages/Admin/OrderStatus";
 
-
+//Actions PRODUCT
+import AddProduct from "./pages/ProductCrud/AddProductPage";
 
 export default function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+
+const navigate = useNavigate()
+
 
   useEffect(() => {
     const accessToken = USER_HELPERS.getUserToken();
@@ -60,6 +65,7 @@ export default function App() {
       }
       USER_HELPERS.removeUserToken();
       setIsLoading(false);
+      navigate("/auth/login")
       return setUser(null);
     });
   }
@@ -73,9 +79,7 @@ export default function App() {
   }
   return (
     <div className="App">
-      <Navbar handleLogout={handleLogout} user={user} />
-     
-        
+      <Navbar handleLogout={handleLogout} user={user} />     
         <Routes>
         {/* {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
@@ -94,6 +98,8 @@ export default function App() {
 
         <Route path="/statusorder" element={<OrderStatus/>}/>
         
+        <Route path="/newproduct" element={<AddProduct/>}/>
+
       </Routes>
 
       <Footer/>  

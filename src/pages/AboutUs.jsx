@@ -3,41 +3,26 @@ import "../App.css";
 
 export default function AboutUs() {
   return (
-
-
-
-
-
-
-
-
-
-
-
-    //<------------ONE BLOCK---------->
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div>
 
-            <div class="logo-homepage">
-              <img 
-                src="/images/heading.png">
-              </img>
+            <div className="logo-homepage">
+              <img src="/images/heading.png"/>
             </div>
 
             <div className="homepage-text">
-              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Nuestra historia
-              </h2>
-
-              <p className="mt-3 max-w-3xl text-lg text-gray-500">
-              Desde hace 30 años, nos hemos dedicado a cumplir con 
-            las necesidades de las familias respecto al
-            diseño de su hogar. No basta con cumplir 
-            el aspecto visual, la <b>funcionalidad</b> y  
-            <b> calidad</b> de los muebles es nuestra prioridad.
-              </p>
+                <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Nuestra historia
+                </h2>
+                  <p className="mt-3 max-w-3xl text-lg text-gray-500">
+                      Desde hace 30 años, nos hemos dedicado a cumplir con 
+                    las necesidades de las familias respecto al
+                    diseño de su hogar. No basta con cumplir 
+                    el aspecto visual, la <b>funcionalidad</b> y  
+                    <b> calidad</b> de los muebles es nuestra prioridad.
+                </p>
             </div>
 
           </div>

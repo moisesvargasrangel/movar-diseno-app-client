@@ -9,19 +9,17 @@ const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catálogo', href: '/gallery', current: false },
   { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
-  { name: 'Ingresa', href: '/auth/login', current: false },
-  { name: 'Registrate', href: '/auth/signup', current: false },
-  
-  
-
-  // { name: 'Projects', href: '#', current: false },
+  // { name: 'Ingresa', href: '/auth/login', current: false },
+  // { name: 'Registrate', href: '/auth/signup', current: false },
+  // { name: 'Nuevo Producto', href: '/newproduct', current: false },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const {user, handleLogout} = props;
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -31,7 +29,10 @@ export default function Navbar() {
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md 
+                                            text-gray-400 
+                                            hover:text-white
+                                            hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -61,18 +62,55 @@ export default function Navbar() {
                 <div className="hidden sm:block sm:m-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                      <Link
+                          key={item.name}
+                          to={item.href}
+                          className={classNames(
+                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            'px-3 py-2 rounded-md text-sm font-medium'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                          >
+                          {item.name}
+                      </Link>
                     ))}
+                  </div>
+                </div>
+
+
+                <div className="hidden sm:block sm:m-auto">
+                  <div className="flex space-x-4">
+
+    {/* -----NO HAY INICIO DE SESIÓN-------- */}
+                  {!user && (
+                      <>
+                          <Link
+                              to="/auth/login"
+                              className= 'bg-gray-900 text-white'
+                              //  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                              // 'px-3 py-2 rounded-md text-sm font-medium'             
+                          >
+                            Iniciar Sesión
+                          </Link>
+
+                          <Link
+                              to="/auth/signup"
+                              className= 'bg-gray-900 text-white hover:text-white'        
+                          >
+                            Registrate
+                          </Link>
+                      </>
+                    )}
+
+     {/* -----SI HAY SESIÓN-------- */}  
+
+                          <Link
+                              to="/"                            
+                              className= 'bg-gray-900 text-white'>
+                                {user?.username} {user?.emaill}
+                            Cerrar Sesión
+                          </Link>
+
                   </div>
                 </div>
               </div>
@@ -80,15 +118,21 @@ export default function Navbar() {
                 <a href='/shoppingcart'>
                 <button
                   type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="bg-gray-800 p-1 rounded-full 
+                             text-gray-400 
+                             hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 
+                             focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
                 </a>
+
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full 
+                                              focus:outline-none focus:ring-2 focus:ring-offset-2 
+                                              focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -105,8 +149,10 @@ export default function Navbar() {
                     leave="transition ease-in duration-75"
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                     >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 
+                                            rounded-md shadow-lg py-1 bg-white ring-1 
+                                            ring-black ring-opacity-5 focus:outline-none ">
                       
                       <Menu.Item>
                         {({ active }) => (
@@ -168,11 +214,6 @@ export default function Navbar() {
           </Disclosure.Panel>
         </>
       )}
-
-
-
-
-
       
     </Disclosure>
   )
