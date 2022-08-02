@@ -9,9 +9,6 @@ const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catálogo', href: '/gallery', current: false },
   { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
-  // { name: 'Ingresa', href: '/auth/login', current: false },
-  // { name: 'Registrate', href: '/auth/signup', current: false },
-  // { name: 'Nuevo Producto', href: '/newproduct', current: false },
 ]
 
 function classNames(...classes) {
@@ -84,18 +81,23 @@ export default function Navbar(props) {
     {/* -----NO HAY INICIO DE SESIÓN-------- */}
                   {!user && (
                       <>
+                      <Link
+                              to="/newproduct"
+                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
+                          >
+                            Add
+                          </Link>
+
                           <Link
                               to="/auth/login"
-                              className= 'bg-gray-900 text-white'
-                              //  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                              // 'px-3 py-2 rounded-md text-sm font-medium'             
+                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
                           >
                             Iniciar Sesión
                           </Link>
 
                           <Link
                               to="/auth/signup"
-                              className= 'bg-gray-900 text-white hover:text-white'        
+                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'        
                           >
                             Registrate
                           </Link>
@@ -106,9 +108,10 @@ export default function Navbar(props) {
                     
                     {user && (
                       <>
-              <div className=' text-gray-300 px-4 py-2 rounded-md text-sm font-medium'>
-              Bienvenidx <b>{user?.username}</b> 
-              </div>
+                          <div className=' text-gray-300 px-4 py-2 rounded-md text-sm font-medium'>
+                          Bienvenid@ <b>{user?.username}</b> 
+                          </div>
+
                           <button
                               onClick={handleLogout}                            
                               className= ' text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
@@ -116,7 +119,7 @@ export default function Navbar(props) {
                                 {/* {user?.email} */}
                                Cerrar Sesión
                           </button>
-                          </>
+                      </>
                 )}
                   </div>
                 </div>
@@ -215,21 +218,3 @@ export default function Navbar(props) {
     </Disclosure>
   )
 }
-
-
-
-
-// const Navbar = (props) => {
-//   return (
-//     <nav> 
-//             <Link to="/auth/signup" className="authLink">
-//               Signup
-//             </Link>
-//             <Link to="/auth/login" className="authLink">
-//               Log In
-//             </Link>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;

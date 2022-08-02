@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect, useState, Fragment } from "react";
+import { Routes, Route, useNavigate, BrowserRouter as Router } from "react-router-dom";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
-import { Fragment } from 'react'
+
 
 //Components
 import LoadingComponent from "./components/Loading";

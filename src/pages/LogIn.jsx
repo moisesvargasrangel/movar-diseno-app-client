@@ -74,14 +74,14 @@ export default function LogIn({authenticate}) {
                 <form onSubmit={handleFormSubmission} className="space-y-6 signup__form">
                   <div>
                     <label htmlFor="input-username" className="block text-sm font-medium text-gray-700">
-                      Correo Eléctronico
+                      Usuario
                     </label>
                     <div className="mt-1">
                       <input
                          id="input-username"
                                    type="text"
                                    name="username"
-                                   placeholder="username"
+                                   placeholder="Usuario"
                                    value={username}
                                    onChange={handleInputChange}
                                    required
@@ -104,7 +104,7 @@ export default function LogIn({authenticate}) {
                           id="input-password"
                           type="password"
                           name="password"
-                          placeholder="Password"
+                          placeholder="Contraseña"
                           value={password}
                           onChange={handleInputChange}
                           required
