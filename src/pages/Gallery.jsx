@@ -33,9 +33,9 @@ function Gallery() {
             <div className="productCard card" key={product._id} >
               <Link to={`/gallery/${product._id}`}>
                 <h1><b>{product.name}</b></h1>
-                <h3>{product.price}</h3>
-                <h3>{product.material}</h3>
-                <h3>{product.description}</h3>
+                <h4>{product.price}</h4>
+                <p>{product.material}</p>
+                <p>{product.description}</p>
               </Link>
             </div>
           );

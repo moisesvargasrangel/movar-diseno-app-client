@@ -18,16 +18,14 @@ import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import Questions from "./pages/QyA";
 
-//Pages USER
-import ShoppingCart from "./pages/User/ShoppingCart"; 
-import MyProducts from "./pages/User/MyProducts";
-import ProductStatus from "./pages/User/ProductStatus";
-
 //Pages ADMIN
 import OrderStatus from "./pages/Admin/OrderStatus";
 
-//Actions PRODUCT
+//Actions CRUD PRODUCT
 import AddProduct from "./pages/ProductCrud/AddProductPage";
+import ProductDetailPage from "./pages/ProductCrud/ProductDetailPage";
+import EditProductPage from "./pages/ProductCrud/EditProductPage";
+
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -92,13 +90,13 @@ const navigate = useNavigate()
         <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/qya" element={<Questions/>}/>
 
-        <Route path="/shoppingcart" element={<ShoppingCart/>}/>
-        <Route path="/myproducts" element={<MyProducts/>}/>
-        <Route path="/productstatus" element={<ProductStatus/>}/>
 
         <Route path="/statusorder" element={<OrderStatus/>}/>
         
+        {/* ---> CRUD <--- */}
         <Route path="/newproduct" element={<AddProduct/>}/>
+        <Route path="/gallery/:productId" element={<ProductDetailPage/>}/>
+        <Route path="/gallery/edit/:productId" element={<EditProductPage/>}/>
 
       </Routes>
 

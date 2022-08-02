@@ -13,11 +13,6 @@ import QyA from "../pages/QyA";
 //ADMIN PAGES
 import OrderStatus from "../pages/Admin/OrderStatus";
 
-//USER PAGES
-import ShoppingCart from "../pages/User/ShoppingCart";
-import MyProducts from "../pages/User/MyProducts"
-import ProductStatus from "../pages/User/ProductStatus"
-
 //PRODUCTS ACTION
 import AddProduct from "../pages/ProductCrud/AddProductPage";
 
