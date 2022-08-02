@@ -86,8 +86,8 @@ const navigate = useNavigate()
         ))} */}
 
         <Route path="/" element={<HomePage/>} />
-        <Route path="/auth/login" element={<LogIn/>} />
-        <Route path="/auth/signup" element={<Signup/>} />
+        <Route path="/auth/login" element={<LogIn authenticate={authenticate}/>} />
+        <Route path="/auth/signup" element={<Signup authenticate={authenticate}/>} />
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/qya" element={<Questions/>}/>

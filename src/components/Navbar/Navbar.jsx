@@ -103,29 +103,26 @@ export default function Navbar(props) {
                     )}
 
      {/* -----SI HAY SESIÓN-------- */}  
-
-                          <Link
-                              to="/"                            
-                              className= 'bg-gray-900 text-white'>
-                                {user?.username} {user?.emaill}
-                            Cerrar Sesión
-                          </Link>
-
+                    
+                    {user && (
+                      <>
+              <div className=' text-gray-300 px-4 py-2 rounded-md text-sm font-medium'>
+              Bienvenidx <b>{user?.username}</b> 
+              </div>
+                          <button
+                              onClick={handleLogout}                            
+                              className= ' text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+                                
+                                {/* {user?.email} */}
+                               Cerrar Sesión
+                          </button>
+                          </>
+                )}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href='/shoppingcart'>
-                <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full 
-                             text-gray-400 
-                             hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 
-                             focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-                </a>
+
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
