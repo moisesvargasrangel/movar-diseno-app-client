@@ -10,12 +10,8 @@ import AboutUs from "../pages/AboutUs";
 import Gallery from "../pages/Gallery";
 import QyA from "../pages/QyA";
 
-//ADMIN PAGES
-import OrderStatus from "../pages/Admin/OrderStatus";
-
 //PRODUCTS ACTION
 import AddProduct from "../pages/ProductCrud/AddProductPage";
-
 
 const routes = (props) => {
   const { user } = props;

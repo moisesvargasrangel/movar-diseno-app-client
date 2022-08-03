@@ -34,7 +34,7 @@ export default function LogIn({authenticate}) {
           USER_HELPERS.setUserToken(res.data.accessToken);
           authenticate(res.data.user);
           if(res.data.user.role == "admin"){
-            navigate("/admin");
+            navigate("/newproduct");
           }else{
             navigate("/");
           }

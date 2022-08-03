@@ -28,38 +28,38 @@ const headingProducts = [
 const homeProducts = [
   {
     name: '2017 Expo Mueble Internacional - Stand Whirlpool',
-    role: 'Expo Guadalajara, GDL.',
+    location: 'Expo Guadalajara, GDL.',
     imageUrl:
       '/images/homepage/aa.jpeg',
   },
   {
     name: 'Cocina Intregal',
-    role: 'Huixquilucan, Edo de Mex.',
+    location: 'Huixquilucan, Edo de Mex.',
     imageUrl:
       '/images/gallery/1.jpg',
   },
   {
     name: '2022 Expo Mueble Internacional - Stand Whirlpool',
-    role: 'Expo Guadalajara, GDL.',
+    location: 'Expo Guadalajara, GDL.',
     imageUrl:
       '/images/homepage/cc.png',
   },
   {
     name: '2019 Expo Mueble WTC - Stand Mabe',
-    role: 'WTC, CDMX.',
+    location: 'WTC, CDMX.',
     imageUrl:
       '/images/homepage/bb.jpg',
   },
   {
     name: 'Cocina de Exhibición - Whirlpool',
-    role: 'Palacio de Hierro Polanco, CDMX.',
+    location: 'Palacio de Hierro Polanco, CDMX.',
     imageUrl:
       '/images/homepage/z.jpg',
 
   },
   {
     name: 'Cocina Integral',
-    role: 'Roma, CDMX.',
+    location: 'Roma, CDMX.',
     imageUrl:
       '/images/homepage/a.jpg',
 
@@ -113,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="bg-whitr">
+      <div className="bg-white">
       <div className="mx-auto py-0 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-0">
         <div className="space-y-8">
           <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
@@ -123,7 +123,7 @@ export default function HomePage() {
             </p>
           </div>
           <ul
-            role="list"
+            location="list"
             className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
           >
             {homeProducts.map((person) => (
@@ -136,9 +136,9 @@ export default function HomePage() {
                   <div className="space-y-2">
                     <div className="text-lg leading-6 font-medium space-y-1">
                       <h3>{person.name}</h3>
-                      <p className="text-red-700">{person.role}</p>
+                      <p className="text-red-700">{person.location}</p>
                     </div>
-                    <ul role="list" className="flex space-x-5">
+                    <ul location="list" className="flex space-x-5">
 
                     </ul>
                   </div>

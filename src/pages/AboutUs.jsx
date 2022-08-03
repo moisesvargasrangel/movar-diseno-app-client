@@ -75,7 +75,7 @@ export default function AboutUs() {
                 Aprovechemos hasta el último rincón.
               </p>
               <footer className="mt-6">
-                <p className="flex flex-col font-medium">
+                <div className="flex flex-col font-medium">
                   <span>
                     <p> 
                         Hoy en día, las familias necesitan aprovecha todo el espacio que
@@ -92,7 +92,7 @@ export default function AboutUs() {
                     materializemos lo que imaginas.
                     </p>
                   </span>
-                </p>
+                </div>
               </footer>
             </blockquote>
           </div>

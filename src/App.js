@@ -18,9 +18,6 @@ import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import Questions from "./pages/QyA";
 
-//Pages ADMIN
-import OrderStatus from "./pages/Admin/OrderStatus";
-
 //Actions CRUD PRODUCT
 import AddProduct from "./pages/ProductCrud/AddProductPage";
 import ProductDetailPage from "./pages/ProductCrud/ProductDetailPage";
@@ -89,9 +86,6 @@ const navigate = useNavigate()
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/gallery" element={<Gallery/>}/>
         <Route path="/qya" element={<Questions/>}/>
-
-
-        <Route path="/statusorder" element={<OrderStatus/>}/>
         
         {/* ---> CRUD <--- */}
         <Route path="/newproduct" element={<AddProduct/>}/>

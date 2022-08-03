@@ -1,15 +1,16 @@
-import { Fragment } from 'react'
+import { Fragment, React } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, ShoppingCartIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
 
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catálogo', href: '/gallery', current: false },
   { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
 ]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -79,14 +80,17 @@ export default function Navbar(props) {
                   <div className="flex space-x-4">
 
     {/* -----NO HAY INICIO DE SESIÓN-------- */}
-                  {!user && (
-                      <>
-                      <Link
-                              to="/newproduct"
-                              className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
-                          >
-                            Add
-                          </Link>
+    
+              {!user && (
+                          <> 
+                              <Link
+                                  to="/newproduct"
+                                  className= 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'   
+                              >
+                                Add
+                              </Link>
+                            
+                        
 
                           <Link
                               to="/auth/login"
@@ -142,7 +146,7 @@ export default function Navbar(props) {
                     </Menu.Button>
                   </div>
                   <Transition
-                    as={Fragment}
+                    as={Fragment} 
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
                     enterTo="transform opacity-100 scale-100"
