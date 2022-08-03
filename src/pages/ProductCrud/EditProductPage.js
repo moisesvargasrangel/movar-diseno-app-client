@@ -11,6 +11,7 @@ function EditProductPage(props) {
   const [price, setPrice] = useState("");
   const [material, setMaterial] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
 
   const {productId} = useParams()
 
@@ -21,12 +22,13 @@ function EditProductPage(props) {
     axios.get(`${API_URL}/api/gallery/${productId}`)
     .then((resultado)=>{
       // console.log(resultado.data);
-      const {name, price, material, description} = resultado.data;
+      const {name, price, material, description, image} = resultado.data;
 
       setName(name);
       setPrice(price);
       setMaterial(material);
       setDescription(description);
+      setImage(image);
       
     })
     .catch(console.log)
@@ -34,8 +36,8 @@ function EditProductPage(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log(name, price, material, description);
-    axios.put(`${API_URL}/api/gallery/${[productId]}`, {name, price, material, description})
+    // console.log(name, price, material, description, image);
+    axios.put(`${API_URL}/api/gallery/${[productId]}`, {name, price, material, description, image})
     .then(resultado => {
       // console.log(resultado)
       navigate("/gallery")
@@ -138,6 +140,26 @@ function EditProductPage(props) {
                   </div>
 
                   <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      URL de la imagen
+                    </label>
+
+                      <div className="mt-1">
+                        <textarea
+                          type="text"
+                          name="Image"
+                          rows={3}
+                          value={image}
+                          className="shadow-sm focus:ring-indigo-500
+                                     focus:border-indigo-500 mt-1 block w-full 
+                                     sm:text-sm border border-gray-300 rounded-md"
+                          placeholder="URL de la imagen"
+                          onChange={(e) => setImage(e.target.value)}
+                        />
+                      </div>
+                  </div>
+
+                  {/* <div>
                     <label className="block text-sm font-medium text-gray-700">Cover photo</label>
                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                       <div className="space-y-1 text-center">
@@ -168,7 +190,7 @@ function EditProductPage(props) {
                         <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button

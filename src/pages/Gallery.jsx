@@ -35,8 +35,8 @@ function Gallery() {
               <div className="relative">
                 <div className="relative w-full h-72 rounded-lg overflow-hidden">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.image}
+                    alt="Product Image"
                     className="w-full h-full object-center object-cover"
                   />
                 </div>
@@ -44,6 +44,8 @@ function Gallery() {
                   <h3 className="text-sm font-medium text-gray-900">{product.name}</h3>
                   <p className="mt-1 text-sm text-gray-600">{product.material}</p>
                   <p className="mt-1 text-sm text-gray-400">{product.description}</p>
+                 
+             
                 </div>
                 <div className="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden">
                   <div
