@@ -52,18 +52,9 @@ function Gallery() {
                     aria-hidden="true"
                     className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
                   />
-                  <p className="relative text-lg font-semibold text-white">{product.price}</p>
+                  <p className="relative text-lg font-semibold text-white">$ {product.price} MXN</p>
                 </div>
               </div>
-
-              <div className="mt-6">
-                <a
-                  href={product.href}
-                  className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Agregar al carrito <span className="sr-only">, {product.name}</span>
-                </a>
-                </div>
 
                <div className="mt-2"> 
                 <Link

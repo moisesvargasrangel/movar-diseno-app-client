@@ -23,6 +23,11 @@ import AddProduct from "./pages/ProductCrud/AddProductPage";
 import ProductDetailPage from "./pages/ProductCrud/ProductDetailPage";
 import EditProductPage from "./pages/ProductCrud/EditProductPage";
 
+//Contact Page
+import ContactPage from "./pages/Contact/ContactPage";
+
+
+
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -89,8 +94,11 @@ const navigate = useNavigate()
         
         {/* ---> CRUD <--- */}
         <Route path="/newproduct" element={<AddProduct/>}/>
-        <Route path="/gallery/:productId" element={<ProductDetailPage/>}/>
+        <Route path="/gallery/:productId" element={<ProductDetailPage user={user} />}/>
         <Route path="/gallery/edit/:productId" element={<EditProductPage/>}/>
+
+        {/* ---> CONTACT <--- */}
+        <Route path="/contact/:productId" element={<ContactPage/>}/>
 
       </Routes>
 
