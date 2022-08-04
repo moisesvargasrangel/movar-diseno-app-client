@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
  
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
  
 function EditProductPage(props) {
   const [name, setName] = useState("");
@@ -19,7 +19,7 @@ function EditProductPage(props) {
 
   
   useEffect(() => {
-    axios.get(`${API_URL}/api/gallery/${productId}`)
+    axios.get(`${API_URL}/gallery/${productId}`)
     .then((resultado)=>{
       // console.log(resultado.data);
       const {name, price, material, description, image} = resultado.data;
@@ -37,7 +37,7 @@ function EditProductPage(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     // console.log(name, price, material, description, image);
-    axios.put(`${API_URL}/api/gallery/${[productId]}`, {name, price, material, description, image})
+    axios.put(`${API_URL}/gallery/${[productId]}`, {name, price, material, description, image})
     .then(resultado => {
       // console.log(resultado)
       navigate("/gallery")

@@ -1,11 +1,13 @@
+import swal from 'sweetalert';
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { useState, useEffect } from "react";
 import { useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
 import emailjs from "emailjs-com";
+import NumberFormat from 'react-number-format';
 
  
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
  
 function ContactPage(props) {
   const [name, setName] = useState("");
@@ -20,19 +22,19 @@ function ContactPage(props) {
 
   function sendEmail(e){
     e.preventDefault();
-
-    emailjs.sendForm('gmail', 'template_2amd3nn', e.target, 's5Ww3Z4qxpc20MHT_')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-      e.target.reset()
-
+    
+    emailjs.send('gmail', 'template_2amd3nn',{name, price, material, description, image}, 's5Ww3Z4qxpc20MHT_')
+    .then((result) => {
+      console.log(result.text);
+    }, (error) => {
+      console.log(error.text);
+    });
+    e.target.reset()
+    swal("¡Enviado con éxito!", "Recibimos tu información, en breve nos comunicaremos contigo vía email.", "success");
   }
   
   useEffect(() => {
-    axios.get(`${API_URL}/api/gallery/${productId}`)
+    axios.get(`${API_URL}/gallery/${productId}`)
     .then((resultado)=>{
       // console.log(resultado.data);
       const {name, price, material, description, image} = resultado.data;
@@ -56,7 +58,7 @@ function ContactPage(props) {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover lg:absolute lg:h-full"
-            src="https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={image}
             alt=""
           />
         </div>
@@ -141,7 +143,7 @@ function ContactPage(props) {
                     name="name"
                     rows={3}
                     value={name}
-                    // disabled
+                    disabled
                     className="block w-full shadow-sm sm:text-sm 
                             focus:ring-indigo-500 focus:border-indigo-500
                             border-gray-300 rounded-md"
@@ -159,7 +161,7 @@ function ContactPage(props) {
                     name="material"
                     value={material}
                     rows={3}
-                    // disabled
+                    disabled
                     className="block w-full shadow-sm sm:text-sm 
                             focus:ring-indigo-500 
                             focus:border-indigo-500 
@@ -173,18 +175,24 @@ function ContactPage(props) {
                   Precio
                 </label>
                 <div className="mt-1">
-                  <input
-                    type="number"
+                  <NumberFormat
+                    displayType={'number'}
                     name="price"
                     value={price}
                     rows={3}
-                    // disabled
+                    disabled
                     className="block w-full shadow-sm 
                               sm:text-sm focus:ring-indigo-500 
                               focus:border-indigo-500 
                               border-gray-300 rounded-md"
+                    thousandSeparator={true}
+                    prefix={'$'}
+                    suffix={"MXN"}
+                    renderText={(value, props) => <div {...props}>{value}</div>}
+                              
                   />
                 </div>
+                
               </div>
 
               <div className="sm:col-span-2">
@@ -197,29 +205,10 @@ function ContactPage(props) {
                     name="description"
                     rows={3}
                     value={description}
-                    // disabled
+                    disabled
                     className="block w-full shadow-sm 
                               sm:text-sm focus:ring-indigo-500 
                               focus:border-indigo-500
-                              border-gray-300 rounded-md"
-                  />
-                </div>
-              </div>
-
-              <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  URL
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    name="url"
-                    rows={3}
-                    value={image}
-                    // disabled
-                    className="block w-full shadow-sm 
-                              sm:text-sm focus:ring-indigo-500 
-                              focus:border-indigo-500 
                               border-gray-300 rounded-md"
                   />
                 </div>
@@ -236,7 +225,7 @@ function ContactPage(props) {
                             focus:ring-2 focus:ring-offset-2 
                             focus:ring-indigo-500"
                   value="Send Message"
-                  // onSubmit={alert("¡Enviado con éxito! Recibimos tu información, en breve nos comunicaremos contigo vía email.")}
+                  onSubmit={() => alert("¡Enviado con éxito! Recibimos tu información, en breve nos comunicaremos contigo vía email.")}
                >
                   Obtener Información
                 </button>

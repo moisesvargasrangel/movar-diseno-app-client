@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate, Navigate,Link } from "react-router-dom";
 import { CheckIcon, CurrencyDollarIcon, MenuIcon, PuzzleIcon, MailIcon } from '@heroicons/react/outline'
+import NumberFormat from 'react-number-format';
 
 function ProductDetailPage (props) {
   const [product, setProduct] = useState(null);
@@ -11,7 +12,7 @@ function ProductDetailPage (props) {
   const navigate = useNavigate()
 
  useEffect(() =>{
-  axios.get(`http://localhost:5005/api/gallery/${productId}`)
+  axios.get(`${process.env.REACT_APP_SERVER_URL}/gallery/${productId}`)
   .then(resultado => {
    setProduct(resultado.data)
   })
@@ -20,13 +21,12 @@ function ProductDetailPage (props) {
   
 
  const handleDelete = () => {
-  axios.delete(`http://localhost:5005/api/gallery/${productId}`)
+  axios.delete(`${process.env.REACT_APP_SERVER_URL}/gallery/${productId}`)
   .then(() =>{
     navigate("/gallery")
   })
   .catch(console.log)
  }
-
 
   return (
     <div className="bg-white">
@@ -57,7 +57,15 @@ function ProductDetailPage (props) {
             <dl className="mt-20 grid grid-cols-1 gap-y-10 gap-x-8 text-lg sm:grid-cols-2">        
                 <div >
                   <dt className="font-medium text-gray-900">Precio</dt>
-                  <dd className="mt-2 text-gray-500">${product?.price}</dd>
+                  <NumberFormat
+                        value={product?.price}
+                        className="mt-2 text-gray-500"
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'$'}
+                        suffix={"MXN"}
+                        renderText={(value, props) => <div {...props}>{value}</div>}
+                      />
                 </div>
 
                 <div >
@@ -121,6 +129,7 @@ function ProductDetailPage (props) {
 
               <br>
               </br>
+              
 
 
               
@@ -151,7 +160,7 @@ function ProductDetailPage (props) {
 
             {!user && (
               <>
-                   <Link to={`/contact/${product?._id}`}>
+                   <Link to={`/auth/signup`}>
             <button
                 type="button"
                 className="button__submit

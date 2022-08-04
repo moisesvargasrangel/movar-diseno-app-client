@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
  
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
  
 function AddProduct(props) {
   const [name, setName] = useState("");
@@ -18,7 +18,7 @@ function AddProduct(props) {
  
     const requestBody = { name, price, material, description, image };
     axios
-      .post(`${API_URL}/api/gallery`, requestBody)
+      .post(`${API_URL}/gallery`, requestBody)
       .then((response) => {
         setName("");
         setPrice("");

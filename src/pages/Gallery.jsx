@@ -3,9 +3,10 @@ import { PlusSmIcon as PlusSmIconSolid } from '@heroicons/react/solid'
 import { PlusSmIcon as PlusSmIconOutline } from '@heroicons/react/outline'
 import { useState, useEffect } from "react";
 import axios from "axios";
+import NumberFormat from 'react-number-format';
 
  
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
  
  
 function Gallery() {
@@ -13,7 +14,7 @@ function Gallery() {
  
   const getAllproducts = () => {
     axios
-      .get(`${API_URL}/api/gallery`)
+      .get(`${API_URL}/gallery`)
       .then((response) => setproducts(response.data))
       .catch((error) => console.log(error));
   };
@@ -52,7 +53,16 @@ function Gallery() {
                     aria-hidden="true"
                     className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
                   />
-                  <p className="relative text-lg font-semibold text-white">$ {product.price} MXN</p>
+                  
+                  <NumberFormat
+                        value={product.price}
+                        className="relative text-lg font-semibold text-white"
+                        displayType={'text'}
+                        thousandSeparator={true}
+                        prefix={'$'}
+                        suffix={"MXN"}
+                        renderText={(value, props) => <div {...props}>{value}</div>}
+                      />
                 </div>
               </div>
 
