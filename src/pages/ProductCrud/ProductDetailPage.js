@@ -149,6 +149,28 @@ function ProductDetailPage (props) {
               </>
             )}
 
+            {!user && (
+              <>
+                   <Link to={`/contact/${product?._id}`}>
+            <button
+                type="button"
+                className="button__submit
+                w-full flex justify-center 
+                py-0 px-4 pl-8 pr-8 border border-transparent 
+                rounded-md shadow-sm text-sm font-medium 
+                text-white 
+                bg-gray-700
+                hover:bg-gray-600 
+                focus:outline-none focus:ring-2 
+                focus:ring-offset-2 focus:ring-red-500"
+              >
+                Registrate para obtener información
+                
+            </button>
+            </Link>
+              </>
+            )}
+
           </div>          
         </div>        
       </section>

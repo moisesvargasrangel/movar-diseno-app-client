@@ -56,15 +56,17 @@ function ContactPage(props) {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover lg:absolute lg:h-full"
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+            src="https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
           />
         </div>
       </div>
-      <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
+      
+      <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-16 lg:grid lg:grid-cols-2">
         <div className="lg:pr-8">
           <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Recibir Información</h2>
+            <br></br>
             <p className="mt-4 text-small text-gray-500 sm:mt-3">
             ¡Estás a un solo paso de obtener información de tu producto preferido!.
             </p>
@@ -87,22 +89,26 @@ function ContactPage(props) {
                     name="clientName"
                     type="text"                  
                     placeholder='Nombre'                 
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm sm:text-sm 
+                              focus:ring-indigo-500 focus:border-indigo-500
+                              border-gray-300 rounded-md"
                   />
                 </div>
               </div>
 
             <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-gray-700">
-                  Email
+                  Correo Electrónico
                 </label>
                 <div className="mt-1">
                   <input
                     id="email"
                     name="email"
                     type="text"
-                    placeholder='Email'
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    placeholder='Correo Electrónico'
+                    className="block w-full shadow-sm sm:text-sm 
+                              focus:ring-indigo-500 focus:border-indigo-500 
+                              border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -117,7 +123,9 @@ function ContactPage(props) {
                     name="comments"
                     type="text"
                     placeholder='Comentarios'
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm sm:text-sm 
+                            focus:ring-indigo-500 focus:border-indigo-500 
+                            border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -134,7 +142,9 @@ function ContactPage(props) {
                     rows={3}
                     value={name}
                     // disabled
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm sm:text-sm 
+                            focus:ring-indigo-500 focus:border-indigo-500
+                            border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -150,7 +160,10 @@ function ContactPage(props) {
                     value={material}
                     rows={3}
                     // disabled
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm sm:text-sm 
+                            focus:ring-indigo-500 
+                            focus:border-indigo-500 
+                            border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -166,7 +179,10 @@ function ContactPage(props) {
                     value={price}
                     rows={3}
                     // disabled
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm 
+                              sm:text-sm focus:ring-indigo-500 
+                              focus:border-indigo-500 
+                              border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -182,7 +198,10 @@ function ContactPage(props) {
                     rows={3}
                     value={description}
                     // disabled
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm 
+                              sm:text-sm focus:ring-indigo-500 
+                              focus:border-indigo-500
+                              border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -198,7 +217,10 @@ function ContactPage(props) {
                     rows={3}
                     value={image}
                     // disabled
-                    className="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                    className="block w-full shadow-sm 
+                              sm:text-sm focus:ring-indigo-500 
+                              focus:border-indigo-500 
+                              border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -206,10 +228,17 @@ function ContactPage(props) {
               <div className="text-right sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex justify-center 
+                            py-2 px-4 border border-transparent 
+                            shadow-sm text-sm font-medium rounded-md 
+                            text-white bg-gray-700
+                            hover:bg-gray-600 focus:outline-none 
+                            focus:ring-2 focus:ring-offset-2 
+                            focus:ring-indigo-500"
                   value="Send Message"
+                  // onSubmit={alert("¡Enviado con éxito! Recibimos tu información, en breve nos comunicaremos contigo vía email.")}
                >
-                  Submit
+                  Obtener Información
                 </button>
               </div>
             </form>
