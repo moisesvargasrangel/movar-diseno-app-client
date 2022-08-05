@@ -69,7 +69,12 @@ function Gallery() {
                <div className="mt-2"> 
                 <Link
                   to={`/gallery/${product._id}`}
-                  className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-small text-gray-900 hover:bg-gray-200"
+                  className="relative flex bg-gray-100 
+                            border border-transparent 
+                            rounded-md py-2 px-8 
+                            items-center justify-center 
+                            text-sm font-small text-gray-900 
+                            hover:bg-gray-200"
                 >
                   Detalles <span className="sr-only">, {product.name}</span>
                 </Link>

@@ -16,6 +16,10 @@ function ContactPage(props) {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
 
+  const [clientName, setClientName] = useState("");
+  const [email, setEmail] = useState("");
+  const [comments, setComments] = useState("");
+
   const {productId} = useParams()
 
   const navigate = useNavigate()
@@ -23,7 +27,7 @@ function ContactPage(props) {
   function sendEmail(e){
     e.preventDefault();
     
-    emailjs.send('gmail', 'template_2amd3nn',{name, price, material, description, image}, 's5Ww3Z4qxpc20MHT_')
+    emailjs.send('gmail', 'template_2amd3nn',{name, price, material, description, image, clientName, email, comments}, 's5Ww3Z4qxpc20MHT_')
     .then((result) => {
       console.log(result.text);
     }, (error) => {
@@ -89,6 +93,8 @@ function ContactPage(props) {
                   <input
                     id="clientName"
                     name="clientName"
+                    value={clientName}
+                    onChange={(e) => setClientName(e.target.value)}                   
                     type="text"                  
                     placeholder='Nombre'                 
                     className="block w-full shadow-sm sm:text-sm 
@@ -107,6 +113,8 @@ function ContactPage(props) {
                     id="email"
                     name="email"
                     type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder='Correo Electrónico'
                     className="block w-full shadow-sm sm:text-sm 
                               focus:ring-indigo-500 focus:border-indigo-500 
@@ -124,6 +132,8 @@ function ContactPage(props) {
                     id="comments"
                     name="comments"
                     type="text"
+                    value={comments}
+                    onChange={(e) => setComments(e.target.value)}
                     placeholder='Comentarios'
                     className="block w-full shadow-sm sm:text-sm 
                             focus:ring-indigo-500 focus:border-indigo-500 

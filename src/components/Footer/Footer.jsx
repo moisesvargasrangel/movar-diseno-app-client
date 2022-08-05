@@ -69,7 +69,8 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">&copy; 2022 Movar Diseño. Iztacalco, CDMX. All rights reserved.</p>
+        <p className="mt-8 text-center text-base text-gray-400">&copy; 2022 Movar Diseño. Iztacalco, CDMX. </p>
+        <p className="mt-1 text-center text-base text-gray-400"> Todos los derechos reservados.</p>
       </div>
     </footer>
   )
