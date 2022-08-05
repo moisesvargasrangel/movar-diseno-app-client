@@ -1,16 +1,14 @@
 import { Fragment, React } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, ShoppingCartIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
 
 const navigation = [
   { name: 'Inicio', href: '/', current: false },
   { name: 'Catálogo', href: '/gallery', current: false },
   { name: 'Acerca de Nosotros', href: '/aboutus', current: false },
 ]
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -26,12 +24,11 @@ export default function Navbar(props) {
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
+                {/* ---MOBILE MENU BUTTON---*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md 
                                             text-gray-400 
                                             hover:text-white
-                                            hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
+                                            hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">               
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -75,11 +72,10 @@ export default function Navbar(props) {
                   </div>
                 </div>
 
-
                 <div className="hidden sm:block sm:m-auto">
                   <div className="flex space-x-4">
 
-    {/* -----NO HAY INICIO DE SESIÓN-------- */}
+    {/* -IF NOT LOGGED IN-*/}
     
                     {!user && (
                       <>
@@ -96,11 +92,10 @@ export default function Navbar(props) {
                           >
                             Registrate
                           </Link>
-                      </>
-                      
+                      </>                      
                     )}
 
-     {/* -----SI HAY SESIÓN-------- */}  
+     {/* -IF LOGGED IN- */}  
                     
                     {user && (
                       <>
@@ -115,26 +110,21 @@ export default function Navbar(props) {
                               >
                                 Agregar Producto
                               </Link>
-                            }
+                          }
 
                           <button
                               onClick={handleLogout}                            
-                              className= ' text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+                              className= ' text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 pr-4 rounded-md text-sm font-medium'>
                                 
                                 {/* {user?.email} */}
                                Cerrar Sesión
                           </button>
                       </>
-                )}
+                    )}
                   </div>
                 </div>
               </div>
-
-
-            </div>
-
-
-            
+            </div>            
           </div>
 
           <Disclosure.Panel className="sm:hidden">
@@ -156,8 +146,7 @@ export default function Navbar(props) {
             </div>
           </Disclosure.Panel>
         </>
-      )}
-      
+      )}      
     </Disclosure>
   )
 }

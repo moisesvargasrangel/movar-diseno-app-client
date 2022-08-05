@@ -4,7 +4,6 @@ import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
 
-
 //Components
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
@@ -25,9 +24,6 @@ import EditProductPage from "./pages/ProductCrud/EditProductPage";
 
 //Contact Page
 import ContactPage from "./pages/Contact/ContactPage";
-
-
-
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -101,7 +97,6 @@ const navigate = useNavigate()
         <Route path="/contact/:productId" element={<ContactPage/>}/>
 
       </Routes>
-
       <Footer/>  
     </div>
   );

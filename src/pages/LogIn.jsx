@@ -5,7 +5,6 @@ import "./Signup";
 import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
 
-
 export default function LogIn({authenticate}) {
   const [form, setForm] = useState({
         username: "",
@@ -41,10 +40,6 @@ export default function LogIn({authenticate}) {
           navigate(PATHS.HOMEPAGE);
         });
       }
-
-
-
-
 
   return (
     <>    

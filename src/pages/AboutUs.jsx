@@ -57,7 +57,6 @@ export default function AboutUs() {
         </div>
       </div>
 
-
       <div className="bg-white py-16 lg:py-0">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative py-24 px-8 bg-gray-700 rounded-xl shadow-2xl overflow-hidden lg:px-16 lg:grid lg:grid-cols-2 lg:gap-x-8">
@@ -82,8 +81,7 @@ export default function AboutUs() {
                         tengan disponible. Es necesario adaptar los muebles de una forma funcional e inteligente,
                         no es suficiente con que tenga una buena apariencia.
                     </p>
-                    <br> 
-                  
+                    <br>                   
                     </br>
                     <p className="text-xl font-medium sm:text-2xl">
                     Funcionalidad, estilo, y eficiencia,
@@ -99,10 +97,6 @@ export default function AboutUs() {
         </div>
       </div>
     </div>
-
-
-
-
-    </div>
+  </div>
   )
 }

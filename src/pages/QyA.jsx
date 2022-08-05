@@ -13,9 +13,9 @@ const faqs = [
   },
   {
     id: 3,
-    question: "¿Fabrican muebles sobre pedida?",
+    question: "¿Fabrican muebles sobre medida?",
     answer:
-      "Si, adaptamos la funcionalidad y el diseño de acuerdo a las necesidades que tenga usted y su hogar. "
+      "Si, adaptamos la funcionalidad y el diseño de acuerdo a las necesidades que tengan usted y su hogar. "
   },
   {
     id: 4,

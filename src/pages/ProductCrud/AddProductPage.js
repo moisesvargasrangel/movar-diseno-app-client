@@ -28,8 +28,7 @@ function AddProduct(props) {
         navigate("/gallery");
       })
       .catch((error) => console.log(error));
-  };
- 
+  }; 
   
   return (
     <div>

@@ -33,16 +33,16 @@ export default function Signup({authenticate}) {
       fullName,
       role
     };
-    // console.log(credentials)
+
     signup(credentials).then((res) => {
       if (!res.status) {
-        // unsuccessful signup
+        // UNSUCCESSFUL SIGNUP
         console.error("Signup was unsuccessful: ", res);
         return setError({
           message: "Signup was unsuccessful! Please check the console.",
         });
       }
-      // successful signup
+      // SUCCESSFUL SIGNUP
       USER_HELPERS.setUserToken(res.data.accessToken);
       authenticate(res.data.user);
       navigate(PATHS.HOMEPAGE);
@@ -116,7 +116,6 @@ export default function Signup({authenticate}) {
                 </div>
               </div>
 
-
               <div>
                   <label htmlFor="input-fullName" className="block text-sm font-medium text-gray-700">
                     Nombre
@@ -133,7 +132,6 @@ export default function Signup({authenticate}) {
                     />
                   </div>
               </div>
-
 
               <div>
                   <label htmlFor="input-country" className="block text-sm font-medium text-gray-700">
@@ -164,7 +162,6 @@ export default function Signup({authenticate}) {
                       placeholder="Correo Electrónico"
                       value={email}
                       onChange={handleInputChange}
-                      // required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>

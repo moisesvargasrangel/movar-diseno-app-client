@@ -5,7 +5,6 @@ import { useParams, useNavigate} from "react-router-dom";
 import axios from "axios";
 import emailjs from "emailjs-com";
 import NumberFormat from 'react-number-format';
-
  
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
  
@@ -21,7 +20,6 @@ function ContactPage(props) {
   const [comments, setComments] = useState("");
 
   const {productId} = useParams()
-
   const navigate = useNavigate()
 
   function sendEmail(e){
@@ -40,24 +38,20 @@ function ContactPage(props) {
   useEffect(() => {
     axios.get(`${API_URL}/gallery/${productId}`)
     .then((resultado)=>{
-      // console.log(resultado.data);
       const {name, price, material, description, image} = resultado.data;
-
       setName(name);
       setPrice(price);
       setMaterial(material);
       setDescription(description);
-      setImage(image);
-      
+      setImage(image);      
     })
     .catch(console.log)
   }, [])
 
-
-
   return (
     <div className="ContactPage" >
     <div className="relative bg-white">
+
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
@@ -80,8 +74,6 @@ function ContactPage(props) {
             En breve, nos comunicaremos contigo vía email para brindarte una atención personalizada. 
             Gracias por tu preferencia. 
             </p>
-
-
 
             <form onSubmit={sendEmail}  className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
               
@@ -142,7 +134,6 @@ function ContactPage(props) {
                 </div>
               </div>
               
-         
               <div className="sm:col-span-2">
                 <label className="block text-sm font-medium text-gray-700">
                   Nombre del Producto
@@ -201,8 +192,7 @@ function ContactPage(props) {
                     renderText={(value, props) => <div {...props}>{value}</div>}
                               
                   />
-                </div>
-                
+                </div>               
               </div>
 
               <div className="sm:col-span-2">

@@ -12,7 +12,7 @@ const headingProducts = [
     name: 'Hogar e Interiores',
     href: '#',
     description:
-      'Dejanos complacer las necesidades de tu familia, fabricando muebles con la calidad que ellos se merecen.',
+      'Déjanos complacer las necesidades de tu familia, fabricando muebles con la calidad que ellos se merecen.',
     icon: HomeIcon,
   },
   {
@@ -67,11 +67,9 @@ const homeProducts = [
 
 ]
   
-
 export default function HomePage() {
   return (
     <div className="bg-white">
-      {/* Header */}
       <div className="relative pb-32 bg-gray-500">
         <div className="absolute inset-0">
           <img
@@ -86,7 +84,6 @@ export default function HomePage() {
           <p className="mt-6 max-w-3xl text-xl text-gray-300">
           Nos encargamos de acondicionar tu espacio de acuerdo a tus necesidades, 
           para que tú, tu familia y tus clientes disfruten del mejor lugar.
-
           </p>
         </div>
       </div>

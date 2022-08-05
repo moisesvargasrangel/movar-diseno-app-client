@@ -28,7 +28,7 @@ function ProductDetailPage (props) {
   .catch(console.log)
  }
 
-  return (
+ return (
     <div className="bg-white">
       <section aria-labelledby="features-heading" className="relative">
         <div className="aspect-w-3 aspect-h-2 
@@ -52,7 +52,6 @@ function ProductDetailPage (props) {
               Detalles del Producto
             </h2>
             <p className="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight">{product?.name}</p>
-
 
             <dl className="mt-20 grid grid-cols-1 gap-y-10 gap-x-8 text-lg sm:grid-cols-2">        
                 <div >
@@ -128,37 +127,31 @@ function ProductDetailPage (props) {
               )}
 
               <br>
-              </br>
+              </br>    
               
-
-
-              
-              {user.role == "user" && (
-
-                
+              {user.role == "user" && (         
                 <Link to={`/contact/${product?._id}`}>
-            <button
-                type="button"
-                className="button__submit
-                w-full flex justify-center 
-                py-0 px-4 border border-transparent 
-                rounded-md shadow-sm text-sm font-medium 
-                text-white 
-                bg-gray-700
-                hover:bg-gray-600 
-                focus:outline-none focus:ring-2 
-                focus:ring-offset-2 focus:ring-red-500"
-              >
-                Solicitar Información
-                
-            </button>
-            </Link>
-          
+                  <button
+                      type="button"
+                      className="button__submit
+                      w-full flex justify-center 
+                      py-0 px-4 border border-transparent 
+                      rounded-md shadow-sm text-sm font-medium 
+                      text-white 
+                      bg-gray-700
+                      hover:bg-gray-600 
+                      focus:outline-none focus:ring-2 
+                      focus:ring-offset-2 focus:ring-red-500"
+                    >
+                      Solicitar Información
+                      
+                  </button>
+                </Link>              
               )}
-              </>
-            )}
+            </>
+          )}
             
-            {!user && (
+          {!user && (
               <>
              
                    <Link to={`/auth/signup`}>
@@ -171,18 +164,16 @@ function ProductDetailPage (props) {
                 text-sm font-small text-gray-900 
                 hover:bg-gray-200"
               >
-                Registrate para obtener información
-                
+                Registrate para obtener información            
             </button>
             </Link>
               </>
-            )}
+          )}
 
           </div>          
         </div>        
       </section>
     </div>
-
   );
 }
  
